@@ -1,0 +1,164 @@
+1.Basic:
+file - describe what type of file you provide
+cat - display content of file
+cd - moving by folders
+touch - create file
+cp 'file' '/destination' - copy file to destination
+mv 'file''file2' '/destination' - moving file to destination, also can change name of moved file  
+mkdir - creating catalog
+rm -remove catalog or file
+find '/catalog' -name 'name_file' - searching file in wroted catalog
+alias ll='ls' - shortcut command
+unalias ll  - dleate alias
+
+2.Text-FU
+echo Hello World > word.txt - its stdout, result of Hello World are going in to word.txt, >> without print
+cat < word.txt > word2.txt - it's stdin, cat downloading what is writed in word.txt and result printing in word2.txt
+ls /fake /etc/password > result.txt 2>&1 - stderr error of result redirect stdout from file to stderr result.txt
+cut -f 2 sample.txt - its cut secoud wordl and execute it
+paste -s sample2.txt - deleating tabs
+head -n 15 syslog - showing 15 first lines from begining of file (defoult is 10)
+tail -n 15 syslog - showing 15 ending lines from syslog(defaoult is 10)
+expand file.1 - converting TAB int 8 sapaces
+join file1.txt file2.txt - adding 1 everything what is inside from botg files
+sort  file 1.txt - sorting everything in file alphabetic
+$ echo "hello world" | tr a-z A-Z - translating lower cases to bigger
+$ uniq reading.txt - basic duplate removal
+$ wc /etc/passwd - word count  number of lines/ number of words/ number of bytes
+$ nl file - number of lines
+grep - searcher , word or letters, numbers in catalogs or files
+
+3.Advanced Text-Fu
+vim - vi basic editor
+emacs - also basic editor (for me harder)
+
+4.User management
+
+/etc/shadow - stores encrypted passwords
+/etc/passwd - stores all users and detailed informations
+useradd - adding user
+userdel - removing user
+passwd - changing password 
+ 
+5.PERMISIONS
+
+ls -l - showing permissions
+r(4) - read
+w(2) - write
+x(1) - execute
+symbolic mode :
+u - user/owner
+g - group
+o - others
+a - all
+
+chmod u+x file - add executable to user/owner
+
+chown - change owner file
+chgrp - change group file
+
+umask - taking accesses
+modyfying
+1 - root (before rwx)
+2 - GUID (Group ID)
+4 - UID (User ID)
+
+6. PROCESSES
+
+7.PACKAGES
+
+8.REMEMBER
+
+ps aux - showing working processes now without refresh
+top - showing real time system resourcess and processes
+jobs - showing working processes in backgrounds
+
+9.FILESYSTEM
+/ - root directory
+Essential system:
+/bin - contains command-lines proograms available to all userslike ls
+/sbin - contains administration command for root
+/etc - core system configuration, contains configuration files of system and installed applications(no-exec)
+/lib - contains necessery shared library file like /bin and /sbin work correctly
+/boot - stores all files requierd to boot process including Linux Kernel and boot loaders files
+User and Application Data:
+/home- personal directories for euach user. where you have Desktop,Documents, appseting etc.
+/root - home directory for root, separeted from /home
+/opt - reserved for optional or third-party application software packages
+/usr - contains userinstalled software and utilities. not hold individual users files,  have something like /usr/bin or usr/local
+Dynamic and Temporary Data:
+/var - stands for variable and sotores files that expected to change in size and content  like /var/log caches and spool files
+/tmp -storing temporary files, will be dleted after reboot
+/run - Contains information about the running system since the last boot such as process ID
+Device and Mount Points:
+/dev - Contains special devices files that represents hardware components like input devices , Pendrive
+/media - A standard mount point for removable media like USB drives
+/mnt - mount point for temporarily mounting filesystem
+System Information :
+/proc - vitrual filestystem provides real-time information about currently running processes and kernel parameters
+/srv - for site-specific data served by system, such as files or web server
+VFS- Virtual File system something what can help comunication between aplications and data comunication on diffrent  filesystems (ext4 and XFS etc.)
+Journaling - "journaling" file is the log file on which state are the  process even after reeboot when partition check end continue work when end
+Filesystem Types:
+ext4 - extended filesystem up to 1 exabyte, defoult for many distribution, backword compatible with older  types
+Btrfs - modern filesystem with advanced ferateres like built in snapshots, improvment performance, incremental backup
+XFS - high-performance journaling to handle with large files. for large amount of data
+NTFS/ FAT - standart for windows for bootable both systems
+HFS+ - primary filesystem for macOS, readable , write support with additional tools
+MBR Partitions - Master Boot record,traditional partition table:
+- Support primary, extended and logic partitions
+- Limit of four primary partitions
+- to create more partitions need to be one primary must be extended partition, in this you can create manny logic partitions
+- up to 2 terabytes
+GPT Partitions - GIOD Partition Table, modern standard:
+- only one type of partiton , can be many of them
+- all partitions are assigned Globalky Unique identifier (GUID)
+Filesystem Structure : 
+- Boot block - first few sectors, not used by filesytem itself, contains information used to boot OS
+- Superblock - after bootblock, contains data about filesystem, such size of blocks nad total size of filesystem
+- Inode table - databes that manages files and directories
+- Datablocks - actual content  of flies and directories stored
+fdisk - partitioning tool , not support GPT
+parted - tool supports both
+gparted  - graphical parted
+gdisk - support only GPT
+/etc/fstab - configuration file, defines all available disk partitions, filesystems anddata source
+df - command to check"disk free"
+du - command to check disk usage
+fsck - filesystem check command
+inodes -  contains every information about files
+
+10. BOOT SYSTEM	
+Stage 1 BIOS
+Stage 2 Bootloader
+responsibility for load linux kernel, common bootloader is GRUB
+Stage 3 Kernel
+starts be decompressing and initializing core hardware and memory management, kernel mount root filesystem which contain all the system files.
+Stage 4 Init
+first process started by kernel and ancetor of all processes of sytem, main job is to bring system to usable state by starting services and bg processes 
+
+11.KERNEL
+Kernel primary job is to act as a bridge communicating with the hardware to execute the tasks requested by our processes.
+It handle processes , memmory managment , device communication, system calls and setting up filesystem 
+
+Kernel have Rings like levels of privileged:
+Ring 0 like the most previliged access,give the full trust to manage hardware
+Ring 3 level where user-mode applications run. it is the lleast privileged ring without access to hardaware
+
+strace ls - command to look how kernel working with hardwaret
+
+uname -r - kernel version
+/boot - kernel storage
+
+vmlinuz : comppressed executable Linux Kernel
+initrd : temporary root files loaded into memory during startup
+System.map : maps kernel function names to their memroy adress
+config : stores configuration settings 
+
+lsmod - listing loaded kkernel modules
+sudo modprobe [NAME] - loading kernel module
+sudo modprobe -r [name] - unloading kernel module
+
+12.INIT
+
+
