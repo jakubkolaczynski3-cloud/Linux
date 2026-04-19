@@ -65,7 +65,11 @@ modyfying
 
 6. PROCESSES
 
+
+
 7.PACKAGES
+
+
 
 8.REMEMBER
 
@@ -160,5 +164,25 @@ sudo modprobe [NAME] - loading kernel module
 sudo modprobe -r [name] - unloading kernel module
 
 12.INIT
-
+Primary job of Init is start and stop essential processes. There are 3 major system implementation: System V(SysV),Upstart, Systmd.
+System V - proc-1 can't start without started proc-0 but with shell script it's possible
+lvls of system V:
+0: Shutdown
+1: Single User Mode
+2: Multiuser mode without networking
+3: Multiuser mode with networking
+4: Unused
+5: Multiuser mode with networking and GUI
+6: Reboot
+/etc/init - init processes catalog
+Upstart is init implementation on Ubuntu
+Upstart works way is :
+1. First loading job configurations from /etc/init.
+2. Once a startup event occurs, it will run jobs triggered by that event.
+3. These jobs will make new events, and then those events will trigger more jobs.
+4. Upstart continues to do this until it completes all the necessary jobs.
+sudo service start bluetooth - you can start, stop or restart service
+sudo initctl start networkin - you can start, stop or restart jobs what iar in /etc/init
+systemd - default init system and service manager, responsible for initializing the system in the correct order after the kernel is loaded can be check in /usr/lib/systemd
+working in system like waht must be done like goals or target
 
