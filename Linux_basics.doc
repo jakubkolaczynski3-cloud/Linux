@@ -186,3 +186,15 @@ sudo initctl start networkin - you can start, stop or restart jobs what iar in /
 systemd - default init system and service manager, responsible for initializing the system in the correct order after the kernel is loaded can be check in /usr/lib/systemd
 working in system like waht must be done like goals or target
 
+13. LOGGING
+rsyslogd - daemon working in backrand and waiting for event
+/var/log/syslog - catalog with almost all system messages
+logger - comand to manualy send log
+/var/log/messages - catalog with also almost all system messages (diffrent for distribution)
+/var/log/dmesg - catalog with receiving messages from kernel (hardware issues, reset after reboot)
+dmesg - showing dmesg logs 
+/var/log/kern.log - catalog with kernel logs
+/var/log/auth.log - catalog with systhem authorization logs
+logrotate - automated tool  for managaing process of logs(renaming,creating new,compresing na deleating older)
+/etc/logrotate.conf - configutarion file of logrotate
+
