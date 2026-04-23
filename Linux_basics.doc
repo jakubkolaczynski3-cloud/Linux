@@ -198,3 +198,4 @@ dmesg - showing dmesg logs
 logrotate - automated tool  for managaing process of logs(renaming,creating new,compresing na deleating older)
 /etc/logrotate.conf - configutarion file of logrotate
 
+14.NETWORK BASICS
