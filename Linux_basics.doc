@@ -19,13 +19,13 @@ cut -f 2 sample.txt - its cut secoud wordl and execute it
 paste -s sample2.txt - deleating tabs
 head -n 15 syslog - showing 15 first lines from begining of file (defoult is 10)
 tail -n 15 syslog - showing 15 ending lines from syslog(defaoult is 10)
-expand file.1 - converting TAB int 8 sapaces
-join file1.txt file2.txt - adding 1 everything what is inside from botg files
+expand file.1 - converting TAB int 8 spaces
+join file1.txt file2.txt - adding 1 everything what is inside from both files
 sort  file 1.txt - sorting everything in file alphabetic
-$ echo "hello world" | tr a-z A-Z - translating lower cases to bigger
-$ uniq reading.txt - basic duplate removal
-$ wc /etc/passwd - word count  number of lines/ number of words/ number of bytes
-$ nl file - number of lines
+echo "hello world" | tr a-z A-Z - translating lower cases to bigger
+uniq reading.txt - basic duplicate removal
+wc /etc/passwd - word count  number of lines/ number of words/ number of bytes
+nl file - number of lines
 grep - searcher , word or letters, numbers in catalogs or files
 
 3.Advanced Text-Fu
@@ -68,8 +68,15 @@ modyfying
 
 
 7.PACKAGES
-
-
+Upstream Providers - developers who write the software, they compile the source code, create installation instructions, and release new versions and updates
+Package Maintainers - new version from upstream providers send it to Package Maintainers
+repository - is a central storage location for software
+/etc/apt/sources.list - repository source for debian
+gzip file - compressing file
+gunzip file - uncompressing file
+tar cvf archive.tar file1 file2  - archive files commnad
+tar xzvf myarchive.tar.gz -compress and archive in one command
+Package Dependencies - packages depend on their components for example when there will be luck of component package don't work
 
 8.REMEMBER
 
@@ -91,8 +98,8 @@ User and Application Data:
 /opt - reserved for optional or third-party application software packages
 /usr - contains userinstalled software and utilities. not hold individual users files,  have something like /usr/bin or usr/local
 Dynamic and Temporary Data:
-/var - stands for variable and sotores files that expected to change in size and content  like /var/log caches and spool files
-/tmp -storing temporary files, will be dleted after reboot
+/var - stands for variable and stores files that expected to change in size and content  like /var/log caches and spool files
+/tmp -storing temporary files, will be deleted after reboot
 /run - Contains information about the running system since the last boot such as process ID
 Device and Mount Points:
 /dev - Contains special devices files that represents hardware components like input devices , Pendrive
@@ -139,7 +146,7 @@ responsibility for load linux kernel, common bootloader is GRUB
 Stage 3 Kernel
 starts be decompressing and initializing core hardware and memory management, kernel mount root filesystem which contain all the system files.
 Stage 4 Init
-first process started by kernel and ancetor of all processes of sytem, main job is to bring system to usable state by starting services and bg processes 
+first process started by kernel and ancetor of all processes of system, main job is to bring system to usable state by starting services and bg processes 
 
 11.KERNEL
 Kernel primary job is to act as a bridge communicating with the hardware to execute the tasks requested by our processes.
@@ -149,17 +156,17 @@ Kernel have Rings like levels of privileged:
 Ring 0 like the most previliged access,give the full trust to manage hardware
 Ring 3 level where user-mode applications run. it is the lleast privileged ring without access to hardaware
 
-strace ls - command to look how kernel working with hardwaret
+strace ls - command to look how kernel working with hardware
 
 uname -r - kernel version
 /boot - kernel storage
 
 vmlinuz : comppressed executable Linux Kernel
 initrd : temporary root files loaded into memory during startup
-System.map : maps kernel function names to their memroy adress
+System.map : maps kernel function names to their memory adress
 config : stores configuration settings 
 
-lsmod - listing loaded kkernel modules
+lsmod - listing loaded kernel modules
 sudo modprobe [NAME] - loading kernel module
 sudo modprobe -r [name] - unloading kernel module
 
@@ -182,9 +189,9 @@ Upstart works way is :
 3. These jobs will make new events, and then those events will trigger more jobs.
 4. Upstart continues to do this until it completes all the necessary jobs.
 sudo service start bluetooth - you can start, stop or restart service
-sudo initctl start networkin - you can start, stop or restart jobs what iar in /etc/init
+sudo initctl start networkin - you can start, stop or restart jobs what are in /etc/init
 systemd - default init system and service manager, responsible for initializing the system in the correct order after the kernel is loaded can be check in /usr/lib/systemd
-working in system like waht must be done like goals or target
+working in system like what must be done like goals or target
 
 13. LOGGING
 rsyslogd - daemon working in backrand and waiting for event
@@ -198,4 +205,25 @@ dmesg - showing dmesg logs
 logrotate - automated tool  for managaing process of logs(renaming,creating new,compresing na deleating older)
 /etc/logrotate.conf - configutarion file of logrotate
 
-14.NETWORK BASICS
+14.NETWORK SHARING
+scp file.txt user@remotehost.com:/remote/home - command to copy file to "user" remote address to location /remote/home
+scp user@remotehost.com:/remote/home/file.txt /mydevice/remote_file/ - command to copy file from remote host and location to your location /mydevice/remote_file/
+scp -r mydir user@remotehost.com:/remote/directory - copy directory and send it to "user" directory
+rsync -avh /my/local/directory_one/ /my/local/directory_two/ - synchronize 2 files, working same with remote hosts
+python -m http.server - starting http server in python 3
+NFS -Network file system 
+sudo service nfsclient start - start nfs client
+sudo mount server:/directory /mount_directory  - mopnt nfs client directory
+Samba - software on Linux and Unix systems  for integration, allowing a Linux server to act as a file and print server for Windows, macOS, and other Linux clients
+
+15.NETWORK BASICS
+
+Model OSI :
+1.Physical
+2.Data Link
+3.Network
+4.Transport
+5.Session
+6.Presentation
+7.Application
+
