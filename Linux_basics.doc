@@ -108,7 +108,7 @@ Device and Mount Points:
 System Information :
 /proc - vitrual filestystem provides real-time information about currently running processes and kernel parameters
 /srv - for site-specific data served by system, such as files or web server
-VFS- Virtual File system something what can help comunication between aplications and data comunication on diffrent  filesystems (ext4 and XFS etc.)
+VFS- Virtual File system something what can help comunication between aplications and data comunication on diffrent  filesystems (ext4 and XFS etc.),allows the Linux kernel to support numerous filesystems simultaneously without forcing users to handle different hardware interfaces directly. 
 Journaling - "journaling" file is the log file on which state are the  process even after reeboot when partition check end continue work when end
 Filesystem Types:
 ext4 - extended filesystem up to 1 exabyte, defoult for many distribution, backword compatible with older  types
@@ -228,5 +228,8 @@ Model OSI :
 7.Application
 
 16.SUBNETTING
+ifconfig -a /ip addr show(new)- command to display network details
+192.168.1.0/24 - CIDR format
+NAT - Network Adress translation
 
 
