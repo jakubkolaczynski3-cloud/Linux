@@ -231,7 +231,13 @@ Model OSI :
 ifconfig -a /ip addr show(new)- command to display network details
 192.168.1.0/24 - CIDR format
 NAT - Network Adress translation
-
+ARP(Address Resolution Protocol) -  find the missing information, it broadcasts an ARP request on the local network, asking which device has the target IP address
+RIP (Routing Information Protocol)- distance vector protocol finding best connection basic on:
+Periodic Updates: RIP broadcasts its entire routing table to all neighbors every 30 seconds.
+Hop Count Limit: To prevent routing loops and control network traffic, RIP enforces a maximum hop count of 15. Any route that requires 16 hops is considered unreachable.
+OSPF (Open Shortest Path First) - updates INFORMATIONS to neighboring routes, dont have hop limit
+AS (Autonomous System) - IS large network or a group of networks managed by a single administrative entity
+BGP (border gateway protocol) - doesn't find a path; it makes policy decisions to find the best path based on rules configured by network administrators, ensuring efficient and reliable data exchange across the global internet.
 
 20. GIT
 Git is repository with files and can be add "save points" and back to it 
