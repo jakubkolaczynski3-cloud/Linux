@@ -239,7 +239,11 @@ OSPF (Open Shortest Path First) - updates INFORMATIONS to neighboring routes, do
 AS (Autonomous System) - IS large network or a group of networks managed by a single administrative entity
 BGP (border gateway protocol) - doesn't find a path; it makes policy decisions to find the best path based on rules configured by network administrators, ensuring efficient and reliable data exchange across the global internet.
 
-20. GIT
+17.NETWORK CONFIG
+
+18.TROUBLESHOOTING
+
+19. GIT
 Git is repository with files and can be add "save points" and back to it 
 git init - creating Git repository
 git status - checking status of your repository
