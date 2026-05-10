@@ -253,7 +253,9 @@ arp (also can be "ip neighbour show")- showing cache of arp table
 
 18.TROUBLESHOOTING
 
-19. GIT
+19.DNS
+
+20. GIT
 Git is repository with files and can be add "save points" and back to it 
 git init - creating Git repository
 git status - checking status of your repository
