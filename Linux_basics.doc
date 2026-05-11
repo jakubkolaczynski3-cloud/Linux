@@ -252,6 +252,17 @@ arp (also can be "ip neighbour show")- showing cache of arp table
 
 
 18.TROUBLESHOOTING
+ICMP Types:
+Type 8 - Echo Request: This message is sent by the ping command to a target host to check for connectivity.
+Type 0 - Echo Reply: If the target host is reachable, it responds to an Echo Request with an Echo Reply, confirming that a connection can be established.
+Type 3 - Destination Unreachable: A router or host sends this message when a packet cannot be delivered to its final destination. There are 16 different code values that provide specific reasons, such as:
+        Code 0: Network Unreachable
+        Code 1: Host Unreachable
+Type 11 - Time Exceeded: This message is generated when a packet's Time-To-Live (TTL) value reaches zero before it arrives at its destination, often happens in routing loops and it's used by the traceroute command.
+ping icmp_seq - showing 3 sequence of delivery package to the host and showing if any sequance is lost can showing data lost
+etc/services file - location of list of ports
+netstat -a - command displays all listening and non-listening sockets
+
 
 19.DNS
 
