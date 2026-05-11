@@ -262,5 +262,5 @@ git status - checking status of your repository
 git add - adding files to git and preparing them to commits
 git commit - creating "save point" or snapshot
 git log - checking losgs in Git
-
+git  config --global user.name your.name - setting in global configuration user name as your name
 
