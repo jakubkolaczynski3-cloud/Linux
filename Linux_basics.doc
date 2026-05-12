@@ -274,4 +274,6 @@ git add - adding files to git and preparing them to commits
 git commit - creating "save point" or snapshot
 git log - checking losgs in Git
 git  config --global user.name your.name - setting in global configuration user name as your name
-
+git diff - showing changes before make changes
+git restore - backing to the stage before change
+.gitignore - adding to this files that git shouldn't track
