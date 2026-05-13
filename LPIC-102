@@ -1,0 +1,20 @@
+1.
+"tty" stands for teletypewritter; "pts" stands for pseudo terminal slave. For more information: "man tty" and "man pts".
+bash -l or bash --login - will invoke a login shell.
+bash -i - will invoke an interactive shell.
+bash --noprofile - with login shells will ignore both the system-wide startup file /etc/profile and the user-level startup files ~/.bash_profile, ~/.bash_login and ~/.profile.
+bash --norc - with interactive shells will ignore both the system-wide startup file /etc/bash.bashrc and the user-level startup file ~/.bashrc.
+bash --rcfile <file> -  with interactive shells will take <file> as the startup file ignoring system wide /etc/bash.bashrc and user-level ~/.bashrc.
+Startup files can be divided into Bash specific (those limited only to bash configurations and commands) and general ones (relating to most shells).
+
+Because of the order in which files are run, local files take precedence over global ones.
+local variable ot bash variable - exist only in bash session
+
+'' - ful; text
+"" - with arguments 
+readonly  - after that variable can't be modify
+unset - comand to release read only command
+set - command to check setted variables
+
+Global or environment variables - exist for the current shell as well as for all subsequent processes spawned from it
+export - command that change from local variable to environment  variable
