@@ -18,3 +18,13 @@ set - command to check setted variables
 
 Global or environment variables - exist for the current shell as well as for all subsequent processes spawned from it
 export - command that change from local variable to environment  variable
+remember to set shell script : .sh , chmod +X , #!/bin/bash
+Bash will call whatever command is indicated after the #! as the interpreter for the script file., it may be usefulto employ the shebang for other scripting languages, like Python (#!/usr/bin/python)
+read  - command to remember value wroted by user when scropt working
+array:
+$ declare -a SIZES
+$ SIZES=( 12 345 )
+$ echo ${SIZES[0]}
+12
+$ echo ${SIZES[1]}
+345
