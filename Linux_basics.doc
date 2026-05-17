@@ -277,3 +277,7 @@ git  config --global user.name your.name - setting in global configuration user 
 git diff - showing changes before make changes
 git restore - backing to the stage before change
 .gitignore - adding to this files that git shouldn't track
+git branch - creating new timeline
+git checkout - switching to new timeline, and update files on your current one (older command : git switch)
+git dif master - checking diffrance between branches
+git merge - adding all branches to the main
