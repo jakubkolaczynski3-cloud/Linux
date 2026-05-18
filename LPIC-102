@@ -28,3 +28,4 @@ $ echo ${SIZES[0]}
 12
 $ echo ${SIZES[1]}
 345
+
