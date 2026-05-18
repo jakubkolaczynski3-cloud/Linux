@@ -265,6 +265,14 @@ netstat -a - command displays all listening and non-listening sockets
 
 
 19.DNS
+Domain name system  - ip address on Host name like www.google.com 
+root server -physical servers acros world, know servers who manage Top-Level Domaind (TLDs) ilke .com .org
+TLDs servers- correct authoritative name servers for domains, it doesn't have the final IP address, but it knows which DNS server is responsible for the domain
+Authoritative DNS Server - servers who manage ip addresses and attach them to names
+/etc/hosts - file in linux where hosts are attach to ip adresses
+nslookup - comand to check dns setup
+dig - command to check dns setup but more detailed
+
 
 20. GIT
 Git is repository with files and can be add "save points" and back to it 
