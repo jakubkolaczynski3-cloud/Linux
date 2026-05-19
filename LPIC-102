@@ -29,3 +29,22 @@ $ echo ${SIZES[0]}
 $ echo ${SIZES[1]}
 345
 
+2.
+X Window System - software stack that is used to display text and graphics on a screen.
+Traditionally, the primary configuration file that is used to configure an X server is the /etc/X11/xorg.conf file. On modern Linux distributions, the X server will configure itself at runtime when the X server is started and so no xorg.conf file may exist.
+InputDevice:
+Used to configure a specific model of keyboard or mouse.
+InputClass:
+In modern Linux distributions this section is typically found in a separate configuration file located under /etc/X11/xorg.conf.d/. The InputClass is used to configure a class of hardware devices such as keyboards and mice rather than a specific piece of hardware. Below is an example /etc/X11/xorg.conf.d/00-keyboard.conf file:
+Section "InputClass"
+      Identifier "system-keyboard"
+      MatchIsKeyboard "on"
+      Option "XkbLayout" "us"
+      Option "XkbModel" "pc105"
+EndSection
+
+Wayland- newer x window system The kernel forwards the request via the Wayland protocol to the Wayland compositor, which handles device input, window management and composition.
+The compositor is the part of the system that combines the rendered elements into visual output on the screen.
+
+
+
