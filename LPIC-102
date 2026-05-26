@@ -1,5 +1,5 @@
 1.
-"tty" stands for teletypewritter; "pts" stands for pseudo terminal slave. For more information: "man tty" and "man pts".
+"tty" stands for teletypewritter; "pts" stands for pseudo terminal slave, more info: "man tty" and "man pts".
 bash -l or bash --login - will invoke a login shell.
 bash -i - will invoke an interactive shell.
 bash --noprofile - with login shells will ignore both the system-wide startup file /etc/profile and the user-level startup files ~/.bash_profile, ~/.bash_login and ~/.profile.
@@ -8,7 +8,7 @@ bash --rcfile <file> -  with interactive shells will take <file> as the startup 
 Startup files can be divided into Bash specific (those limited only to bash configurations and commands) and general ones (relating to most shells).
 
 Because of the order in which files are run, local files take precedence over global ones.
-local variable ot bash variable - exist only in bash session
+local variable at bash variable - exist only in bash session
 
 '' - ful; text
 "" - with arguments 
@@ -20,7 +20,7 @@ Global or environment variables - exist for the current shell as well as for all
 export - command that change from local variable to environment  variable
 remember to set shell script : .sh , chmod +X , #!/bin/bash
 Bash will call whatever command is indicated after the #! as the interpreter for the script file., it may be usefulto employ the shebang for other scripting languages, like Python (#!/usr/bin/python)
-read  - command to remember value wroted by user when scropt working
+read  - command to remember value wroted by user when script working
 array:
 $ declare -a SIZES
 $ SIZES=( 12 345 )
