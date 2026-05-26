@@ -29,6 +29,13 @@ $ echo ${SIZES[0]}
 $ echo ${SIZES[1]}
 345
 
+test - Perform a comparison between items supplied to the command.
+if - A logic construct used in scripts to evaluate something as either true or false, then branch command execution based on results.
+case - Evaluate several values against a single variable. Script command execution is then carried out depending on the case command’s result.
+for - Repeat execution of a command based on a given criteria.
+until - Repeat the execution of a command until an expression evaluates to false.
+while - Repeat the execution of a command while a given expression evaluates to true.
+
 2.
 X Window System - software stack that is used to display text and graphics on a screen.
 Traditionally, the primary configuration file that is used to configure an X server is the /etc/X11/xorg.conf file. On modern Linux distributions, the X server will configure itself at runtime when the X server is started and so no xorg.conf file may exist.
